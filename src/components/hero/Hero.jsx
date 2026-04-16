@@ -12,7 +12,7 @@ const Hero = () => {
 relationships that matter most.</p>
             <button className='bg-green-900 text-xl text-center font-bold text-white cursor-pointer py-2 px-4 rounded flex items-center justify-center gap-2'><span><FaPlus /></span> Add a Friend</button>
         </div>
-         <CounterCard/>
+      <CounterCard/>
     <Friends />
     </div>
   )

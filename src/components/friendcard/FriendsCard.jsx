@@ -1,8 +1,10 @@
+import Link from 'next/link'
 import React from 'react'
 
 const FriendsCard = ({friend}) => {
  
   return (
+    <Link href={`/friend/${friend.id}`}>
     <div className='py-2 ml-2'>
     <div className=" flex items-center justify-center flex-col bg-base-100 w-96 shadow-sm py-10">
   <figure className='rounded-full'>
@@ -26,6 +28,7 @@ const FriendsCard = ({friend}) => {
 </div>
 </div>
     </div>
+    </Link>
   )
 }
 
