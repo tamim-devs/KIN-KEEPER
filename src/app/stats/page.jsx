@@ -20,10 +20,10 @@ export default function Page() {
   }, [timeline])
 
   return (
-    <div className="p-10">
+    <div className="p-10 shadow-md">
 
       <h1 className="text-2xl font-bold mb-6">
-        Stats Chart
+       Friendship Analytics
       </h1>
 
       <PieChartDefaultIndex

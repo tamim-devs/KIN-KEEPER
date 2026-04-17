@@ -1,40 +1,42 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#  Keen Keeper Project
 
-## Getting Started
+Keen Keeper is a modern relationship management web app built with **Next.js, Tailwind CSS, DaisyUI**, and **React Context API**.  
+It helps you keep track of your friends, interactions, and stay connected efficiently.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 👥 **All Friends Dashboard**
+  - View all friends in a clean card layout
+  - Each card shows profile, tags, and last contact info
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+-  **Dynamic Friend Details Page**
+  - Click any friend → see full details
+  - Profile, bio, email, status, and activity info
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-  **Quick Interaction Actions**
+  - 📞 Call
+  - 💬 Text
+  - 🎥 Video  
+  → Each click is stored as activity
 
-## Learn More
+- 📊 **Stats Page**
+  - Total interactions breakdown
+  - Call / Text / Video analysis
+  - Visualized using **Recharts (Pie Chart)**
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+- ⚛️ Next.js (App Router)
+- 🎨 Tailwind CSS
+- 🌼 DaisyUI
+- 🧠 React Context API
+- 📊 Recharts
+- 🎯 React Icons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# KIN-KEEPER
->>>>>>> cac1fbdea9446c9b8c8e916bcfd3d427a69e1994
