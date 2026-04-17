@@ -1,19 +1,23 @@
 'use client'
 
-import { createContext } from "react"
+import { createContext, useState } from "react"
 
-const FriendContext = createContext()
-export  const FriendsContext = ({ children }) => {
-  
- const data = {
-  test: 'demo'
- }
+export const FriendContext = createContext()
 
-  return <FriendContext.Provider value={data}>
-    {children}
-  </FriendContext.Provider>
-    
-  
+export const FriendsContext = ({ children }) => {
+  const [timeline, setTimeline] = useState([])
+
+  const addToTimeline = (item) => {
+    setTimeline((prev) => [item, ...prev])
+  }
+
+  return (
+    <FriendContext.Provider value={{
+      timeline,
+      setTimeline,
+      addToTimeline   
+    }}>
+      {children}
+    </FriendContext.Provider>
+  )
 }
-
-export default FriendsContext

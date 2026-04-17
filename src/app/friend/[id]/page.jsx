@@ -1,28 +1,22 @@
-'use client'
-import { useParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import ActionButtons from '@/components/actionbtn/ActionBtn';
+import React from 'react'
 
-export default function Page() {
-  const params = useParams()
-  const [friend, setFriend] = useState(null)
 
-  useEffect(() => {
-    const loadFriend = async () => {
-      const res = await fetch('/friends.json')
-      const data = await res.json()
+const appsPromise = async function () {
+  const res = await fetch("http://localhost:3000/friends.json")
+  const data = await res.json()
+  return data;
+};
 
-      const found = data.find(f => f.id == params.id)
-      setFriend(found)
-    }
+const page = async({params}) => {
 
-    loadFriend()
-  }, [params.id])
+  const friends = await appsPromise()
 
-  if (!friend) {
-    return <p className="p-6">Loading...</p>
-  }
-
+  const {id} = await params
+  const  friend = friends.find((friend)=> friend.id === Number(id))
+  
   return (
+    <div>
     <div className="p-6 bg-base-200 min-h-screen">
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -50,8 +44,8 @@ export default function Page() {
             ))}
           </div>
 
-          <p className="text-sm mt-3 text-gray-500">
-            {friend.bio || "No description available"}
+          <p className="text-sm mt-3 italic text-gray-500">
+            "{friend.bio || "No description available"}"
           </p>
 
           <p className="text-sm mt-2">
@@ -86,7 +80,7 @@ export default function Page() {
 
             <div className="card bg-base-100 shadow p-4 text-center">
               <h2 className="text-xl font-bold">
-                {friend.next_due || "N/A"}
+                {friend.next_due_date || "N/A"}
               </h2>
               <p>Next Due</p>
             </div>
@@ -108,9 +102,7 @@ export default function Page() {
             <h2 className="font-semibold mb-4">Quick Check-In</h2>
 
             <div className="grid grid-cols-3 gap-4">
-              <button className="btn btn-outline">Call</button>
-              <button className="btn btn-outline">Text</button>
-              <button className="btn btn-outline">Video</button>
+             <ActionButtons friend={friend} />
             </div>
           </div>
 
@@ -118,5 +110,8 @@ export default function Page() {
       </div>
 
     </div>
+    </div>
   )
 }
+
+export default page
