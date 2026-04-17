@@ -2,11 +2,10 @@
 
 import { useContext } from "react"
 import { FriendContext } from "@/context/FriendsContext"
-import { useRouter } from "next/navigation"
-
+import { toast } from "react-toastify"
 const ActionButtons = ({ friend }) => {
   const { addToTimeline } = useContext(FriendContext)
-  const router = useRouter()
+
 
   const handleClick = (type) => {
     addToTimeline({
@@ -15,8 +14,7 @@ const ActionButtons = ({ friend }) => {
       type,
       time: new Date().toLocaleTimeString()
     })
-
-    router.push("/timeline")
+toast.success(`${type} with ${friend.name} added!`)
   }
 
   return (

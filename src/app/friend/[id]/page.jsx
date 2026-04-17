@@ -101,7 +101,7 @@ const page = async({params}) => {
           <div className="card bg-base-100 shadow p-5">
             <h2 className="font-semibold mb-4">Quick Check-In</h2>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="flex  justify-center">
              <ActionButtons friend={friend} />
             </div>
           </div>
