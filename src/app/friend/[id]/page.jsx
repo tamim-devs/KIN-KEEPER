@@ -3,7 +3,7 @@ import React from 'react'
 
 
 const appsPromise = async function () {
-  const res = await fetch("http://localhost:3000/friends.json")
+  const res = await fetch("https://kin-keeper-ten.vercel.app/friends.json")
   const data = await res.json()
   return data;
 };
